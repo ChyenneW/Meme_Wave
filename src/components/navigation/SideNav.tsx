@@ -19,6 +19,7 @@ export function SideNav() {
 
   const toggleMenu = () => {
     setMenuState(!menuStateOpen);
+    setLinkTitles(!navLinkTitles);
   };
 
   return (
@@ -28,7 +29,7 @@ export function SideNav() {
         onClick={toggleMenu}
       >
         {menuStateOpen == false ? (
-          <button>
+          <button className="transition duration-700 ease-in-out">
             <IconHoverEffect>
               <span className="flex items-center gap-2">
                 <VscMenu className="h-6 w-6" />
@@ -36,7 +37,7 @@ export function SideNav() {
             </IconHoverEffect>
           </button>
         ) : (
-          <button>
+          <button className="transition duration-700 ease-in-out">
             <IconHoverEffect>
               <span className="flex items-center gap-2">
                 <VscClose className="h-6 w-6" />
@@ -46,8 +47,8 @@ export function SideNav() {
         )}
       </div>
 
-      <ul className="my-5">
-        <li className="mb-2">
+      <ul className="my-5 grid justify-items-center">
+        <li className="mb-2 transition duration-700 ease-in-out">
           <IconHoverEffect>
             <span className="flex items-center gap-2">
               <VscAccount className="h-8 w-8" />
@@ -59,7 +60,7 @@ export function SideNav() {
             </span>
           </IconHoverEffect>
         </li>
-        <li className="mb-2">
+        <li className="mb-2 transition duration-700 ease-in-out">
           <IconHoverEffect>
             <span className="flex items-center gap-2">
               <VscExtensions className="h-8 w-8" />
@@ -71,7 +72,7 @@ export function SideNav() {
             </span>
           </IconHoverEffect>
         </li>
-        <li className="mb-2">
+        <li className="mb-2 transition duration-700 ease-in-out">
           <IconHoverEffect>
             <span className="flex items-center gap-2">
               <VscGraph className="h-8 w-8" />
@@ -83,7 +84,7 @@ export function SideNav() {
             </span>
           </IconHoverEffect>
         </li>
-        <li className="mb-16">
+        <li className="mb-16 transition duration-700 ease-in-out">
           <IconHoverEffect>
             <span className="flex items-center gap-2">
               <VscCommentDiscussion className="h-8 w-8" />
@@ -96,10 +97,10 @@ export function SideNav() {
           </IconHoverEffect>
         </li>
       </ul>
-      <div className="mb-2 flex items-center gap-4 rounded-md border-2 p-2">
+      <div className="mb-2 flex items-center gap-4 rounded-md border-2 p-2 transition duration-700 ease-in-out">
         Light/Dark
       </div>
-      <UserTag />
+      <UserTag navLinkTitles={navLinkTitles} />
     </nav>
   );
 }

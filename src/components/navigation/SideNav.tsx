@@ -3,10 +3,9 @@ import {
   VscCommentDiscussion,
   VscExtensions,
   VscGraph,
-  VscSignIn,
-  VscSignOut,
 } from "react-icons/vsc";
 import { IconHoverEffect } from "../IconHoverEffect";
+import { UserTag } from "./UserTag";
 
 export function SideNav() {
   return (
@@ -45,8 +44,10 @@ export function SideNav() {
           </IconHoverEffect>
         </li>
       </ul>
-      <div>Light/Dark</div>
-      <div>User tag</div>
+      <div className="mb-2 flex items-center gap-4 rounded-md border-2 p-2">
+        Light/Dark
+      </div>
+      <UserTag />
     </nav>
   );
 }

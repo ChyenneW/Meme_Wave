@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import {
   VscAccount,
   VscCommentDiscussion,
@@ -49,52 +50,60 @@ export function SideNav() {
 
       <ul className="my-5 grid justify-items-center">
         <li className="mb-2 transition duration-700 ease-in-out">
-          <IconHoverEffect>
-            <span className="flex items-center gap-2">
-              <VscAccount className="h-8 w-8" />
-              <span
-                className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
-              >
-                PROFILE
+          <Link href="/">
+            <IconHoverEffect>
+              <span className="flex items-center gap-2">
+                <VscAccount className="h-8 w-8" />
+                <span
+                  className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
+                >
+                  PROFILE
+                </span>
               </span>
-            </span>
-          </IconHoverEffect>
+            </IconHoverEffect>
+          </Link>
         </li>
         <li className="mb-2 transition duration-700 ease-in-out">
-          <IconHoverEffect>
-            <span className="flex items-center gap-2">
-              <VscExtensions className="h-8 w-8" />
-              <span
-                className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
-              >
-                DASHBOARD
+          <Link href="/dashboard">
+            <IconHoverEffect>
+              <span className="flex items-center gap-2">
+                <VscExtensions className="h-8 w-8" />
+                <span
+                  className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
+                >
+                  DASHBOARD
+                </span>
               </span>
-            </span>
-          </IconHoverEffect>
+            </IconHoverEffect>
+          </Link>
         </li>
         <li className="mb-2 transition duration-700 ease-in-out">
-          <IconHoverEffect>
-            <span className="flex items-center gap-2">
-              <VscGraph className="h-8 w-8" />
-              <span
-                className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
-              >
-                ACTIVITY
+          <Link href="/">
+            <IconHoverEffect>
+              <span className="flex items-center gap-2">
+                <VscGraph className="h-8 w-8" />
+                <span
+                  className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
+                >
+                  ACTIVITY
+                </span>
               </span>
-            </span>
-          </IconHoverEffect>
+            </IconHoverEffect>
+          </Link>
         </li>
         <li className="mb-16 transition duration-700 ease-in-out">
-          <IconHoverEffect>
-            <span className="flex items-center gap-2">
-              <VscCommentDiscussion className="h-8 w-8" />
-              <span
-                className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
-              >
-                REPORT
+          <Link href="/">
+            <IconHoverEffect>
+              <span className="flex items-center gap-2">
+                <VscCommentDiscussion className="h-8 w-8" />
+                <span
+                  className={`text-3xl ${navLinkTitles ? "sm:flex" : "hidden"}`}
+                >
+                  REPORT
+                </span>
               </span>
-            </span>
-          </IconHoverEffect>
+            </IconHoverEffect>
+          </Link>
         </li>
       </ul>
       <div className="mb-2 flex items-center gap-4 rounded-md border-2 p-2 transition duration-700 ease-in-out">

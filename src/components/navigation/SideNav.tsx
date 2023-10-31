@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
@@ -13,6 +14,9 @@ import { IconHoverEffect } from "../IconHoverEffect";
 import { UserTag } from "./UserTag";
 
 export function SideNav() {
+  const session = useSession();
+  const user = session.data?.user;
+
   const [menuStateOpen, setMenuState] = useState(true);
   const [navLinkTitles, setLinkTitles] = useState(true);
 
@@ -50,7 +54,7 @@ export function SideNav() {
 
       <ul className="my-5 grid justify-items-center">
         <li className="mb-2 transition duration-700 ease-in-out">
-          <Link href="/">
+          <Link href={`/profiles/${user?.id}`}>
             <IconHoverEffect>
               <span className="flex items-center gap-2">
                 <VscAccount className="h-8 w-8" />
@@ -78,7 +82,7 @@ export function SideNav() {
           </Link>
         </li>
         <li className="mb-2 transition duration-700 ease-in-out">
-          <Link href="/">
+          <Link href="/activity">
             <IconHoverEffect>
               <span className="flex items-center gap-2">
                 <VscGraph className="h-8 w-8" />
@@ -92,7 +96,7 @@ export function SideNav() {
           </Link>
         </li>
         <li className="mb-16 transition duration-700 ease-in-out">
-          <Link href="/">
+          <Link href="/report">
             <IconHoverEffect>
               <span className="flex items-center gap-2">
                 <VscCommentDiscussion className="h-8 w-8" />

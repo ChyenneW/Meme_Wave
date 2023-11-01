@@ -1,3 +1,7 @@
+# Meme Wave | Gif of Gab
+
+This is a fun web app that creates search terms ands auto pulls GIFs AND MEMEs while the user is talking.
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.

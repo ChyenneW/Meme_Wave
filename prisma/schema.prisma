@@ -15,7 +15,7 @@ datasource db {
     // https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#string
 }
 
-model Post {
+model Meme {
     id        Int      @id @default(autoincrement())
     name      String
     createdAt DateTime @default(now())
@@ -60,13 +60,16 @@ model Session {
 
 model User {
     id            String    @id @default(cuid())
-    name          String?
+    username      String?   @unique
     email         String?   @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
-    posts         Post[]
+    memes         Meme[]
+
+    searchUsage Int
+    premium     Boolean
 }
 
 model VerificationToken {
